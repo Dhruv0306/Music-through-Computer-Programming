@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sound Synthesis</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>Sound Synthesis</h1>
+    <p>Use the controls below to set the frequency and create custom trigonometric wave functions.</p>
+    <div class="controls">
+      <label>Frequency (Hz): <input type="range" id="frequency" min="20" max="9000" step="10" value="440"></label>
+      <span id="freqValue" style="display:inline-block;"></span>
+      <script>
+      const frequencyInput = document.getElementById('frequency');
+      const freqValueSpan = document.getElementById('freqValue');
+      frequencyInput.addEventListener('input', () => {
+        freqValueSpan.textContent = `${frequencyInput.value} Hz`;
+      });
+      </script>
+      <h3>Customize Wave Function</h3>
+      <label>Amplitude of Sine: <input type="range" id="ampSine" min="0" max="1" step="0.1" value="1"></label>
+      <label>Amplitude of Cosine: <input type="range" id="ampCosine" min="0" max="1" step="0.1" value="0"></label>
+      <label>Amplitude of Tangent: <input type="range" id="ampTangent" min="0" max="1" step="0.1" value="0"></label>
+      <button id="playBtn">Play Sound</button>
+      <button id="stopBtn">Stop Sound</button>
+      <button onclick="location.href='oscillation.html'" style="margin-top: 20px;">
+        Go to Oscillation Settings
+      </button>
+    </div>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/addons/p5.sound.min.js"></script>
+  <script src="synth.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio Oscillation Effect</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>Apply Trigonometric Oscillation to Audio</h1>
+    <div class="controls">
+      <label for="audioFile">Upload an audio file:</label>
+      <input type="file" id="audioFile" accept="audio/*">
+      
+      <label for="frequency">Frequency (Hz): <input type="range" id="frequency" min="20" max="9000" step="20" value="440"></label>
+      <span id="freqValue" style="display:inline-block;"></span>
+      <script>
+      const frequencyInput = document.getElementById('frequency');
+      const freqValueSpan = document.getElementById('freqValue');
+      frequencyInput.addEventListener('input', () => {
+        freqValueSpan.textContent = `${frequencyInput.value} Hz`;
+      });
+      </script>
+      <label for="functionSelect">Trigonometric Function:</label>
+      <select id="functionSelect">
+        <option value="sin">Sine</option>
+        <option value="cos">Cosine</option>
+        <option value="tan">Tangent</option>
+        <option value="combo">Custom Combination</option>
+      </select>
+
+      <button id="playOscillation">Play Oscillation</button>
+      <button id="stopOscillation">Stop Oscillation</button>
+      <button onclick="location.href='synth.html'" class="nav-button">Back to Synthesizer</button>
+    </div>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/addons/p5.sound.min.js"></script>
+  <script src="oscillation.js"></script>
+</body>
+</html>

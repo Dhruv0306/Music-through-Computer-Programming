@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Music Programming Interface</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Container for animation -->
+  <div id="animation-container"></div>
+  <main>
+    <!-- Project title and introduction -->
+    <h1>Interactive Music Programming Interface</h1>
+    <p>An interactive web application that brings together music and programming, allowing you to experiment with sound synthesis, audio manipulation, and visual representations of sound waves.</p>
+    
+    <!-- Features section -->
+    <section>
+      <h2>Features</h2>
+      <ul>
+        <li><strong>Sound Synthesizer</strong>
+          <ul>
+            <li>Real-time frequency control (20Hz - 9000Hz)</li>
+            <li>Multiple waveform options</li>
+            <li>Customizable wave mixing</li>
+            <li>Interactive amplitude control</li>
+          </ul>
+        </li>
+        <li><strong>Audio Effect Processor</strong>
+          <ul>
+            <li>Audio file processing</li>
+            <li>Trigonometric modulation effects</li>
+            <li>Real-time parameter adjustment</li>
+            <li>Dynamic audio manipulation</li>
+          </ul>
+        </li>
+        <li><strong>Visual Wave Display</strong>
+          <ul>
+            <li>Real-time waveform visualization</li>
+            <li>Interactive animations</li>
+            <li>Dynamic color schemes</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Tools section -->
+    <section>
+      <h2>Available Tools</h2>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <h3>Sound Synthesis</h3>
+          <p>Create and manipulate digital sounds using various waveforms and frequencies.</p>
+          <a href="synth.html" class="btn">Open Synthesizer</a>
+        </div>
+        <div class="tool-card">
+          <h3>Audio Effects</h3>
+          <p>Process and modify audio files with different mathematical functions.</p>
+          <a href="oscillation.html" class="btn">Open Effects Processor</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Getting Started section -->
+    <section>
+      <h2>Getting Started</h2>
+      <p>Begin by exploring the synthesizer to create basic sounds, then move on to the audio effects processor for more complex manipulations. All tools feature real-time visual feedback to help you understand the relationship between mathematics and sound.</p>
+    </section>
+
+    <!-- Technical Requirements -->
+    <section>
+      <h2>Technical Requirements</h2>
+      <ul>
+        <li>Modern web browser with Web Audio API support</li>
+        <li>JavaScript enabled</li>
+        <li>Speakers or headphones</li>
+        <li>Stable internet connection</li>
+      </ul>
+    </section>
+
+    <!-- Quick start buttons -->
+    <div class="quick-start">
+      <a href="synth.html" class="btn primary">Start with Synthesis</a>
+      <a href="oscillation.html" class="btn secondary">Try Audio Effects</a>
+    </div>
+  </main>
+
+  <!-- Script tags for p5.js library and custom sketch.js file -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <script src="sketch.js"></script>
+</body>
+</html>
