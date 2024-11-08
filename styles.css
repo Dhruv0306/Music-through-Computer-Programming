@@ -1,102 +1,146 @@
+/* Global Styles */
 * {
+  /* Reset default browser styles */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-  
+
+/* Body Styles */
 body {
+  /* Set font family and color scheme */
   font-family: 'Arial', sans-serif;
   color: #333;
+  /* Gradient background for visual interest */
   background: linear-gradient(135deg, #1e3c72, #2a5298);
+  /* Center content horizontally and vertically */
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
 }
-  
+
+/* Main Content Styles */
 main {
+  /* Set maximum width and add padding for readability */
   max-width: 800px;
   background: #fff;
   padding: 20px 30px;
+  /* Add box shadow for depth effect */
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  /* Add border radius for rounded corners */
   border-radius: 12px;
+  /* Align text to the left */
   text-align: left;
 }
-  
+
+/* Heading Styles */
 h1 {
+  /* Set font size and color for headings */
   font-size: 2em;
   margin-bottom: 10px;
   color: #1e3c72;
+  /* Center headings horizontally */
   text-align: center;
 }
-  
+
+/* Paragraph Styles */
 p {
+  /* Set line height and font size for readability */
   line-height: 1.6;
   font-size: 1.1em;
   margin-bottom: 15px;
 }
-  
+
+/* Section Styles */
 section {
+  /* Add margin to separate sections */
   margin: 20px 0;
 }
-  
+
+/* Subheading Styles */
 h2 {
+  /* Set font size and color for subheadings */
   font-size: 1.5em;
   margin-bottom: 10px;
   color: #2a5298;
 }
-  
+
+/* Unordered List Styles */
 ul {
+  /* Set list style and padding for readability */
   list-style: disc;
   padding-left: 20px;
 }
-  
+
+/* List Item Styles */
 li {
+  /* Set margin and font size for list items */
   margin-bottom: 8px;
   font-size: 1.1em;
 }
-  
+
+/* Animation Container Styles */
 #animation-container {
+  /* Set position and size for animation container */
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: -1;
+  /* Set background color for animation container */
   background: rgba(0, 0, 0, 0.6);
 }
-  
+
+/* Controls Styles */
 .controls {
+  /* Set display and flex direction for controls */
   display: flex;
   flex-direction: column;
+  /* Set maximum width and margin for controls */
   max-width: 300px;
   margin: 20px auto;
+  /* Set background color and padding for controls */
   background: #f0f0f0;
   padding: 20px;
+  /* Add border radius for rounded corners */
   border-radius: 10px;
+  /* Add box shadow for depth effect */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-  
+
+/* Label Styles */
 .controls label {
+  /* Set font size and margin for labels */
   font-size: 1em;
   margin: 10px 0;
 }
-  
+
+/* Button Styles */
 button {
+  /* Set padding and margin for buttons */
   padding: 10px 15px;
   margin-top: 10px;
+  /* Set background color and text color for buttons */
   background-color: #1e3c72;
   color: white;
+  /* Remove border and add border radius for rounded corners */
   border: none;
   border-radius: 5px;
+  /* Add cursor pointer for hover effect */
   cursor: pointer;
 }
-  
+
+/* Button Hover Styles */
 button:hover {
+  /* Set background color for button hover effect */
   background-color: #2a5298;
 }
-  
+
+/* Frequency Value Styles */
 #freqValue {
+  /* Set font weight and font size for frequency value */
   font-weight: bold;
   font-size: 1.1em;
   margin-top: 5px;

@@ -1,36 +1,94 @@
 <!DOCTYPE html>
+<!--
+  Document Type Declaration: This is the document type declaration, indicating that this is an HTML document.
+-->
 <html lang="en">
+<!--
+  HTML Document: This is the root element of the HTML document, specifying the language as English.
+-->
 <head>
+  <!--
+    Meta Tags: These tags provide metadata about the document, such as character encoding and viewport settings.
+  -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--
+    Title: This sets the title of the page, which appears in the browser's title bar and in search engine results.
+  -->
   <title>Sound Synthesis</title>
+  <!--
+    Stylesheet Link: This links to an external stylesheet, which defines the visual styling of the document.
+  -->
   <link rel="stylesheet" href="styles.css">
 </head>
+<!--
+  Body: This is the main content of the HTML document.
+-->
 <body>
+  <!--
+    Main Element: This is the main content area of the page.
+  -->
   <main>
+    <!--
+      Heading: This is the main heading of the page.
+    -->
     <h1>Sound Synthesis</h1>
+    <!--
+      Paragraph: This is a paragraph of text that provides a brief introduction to the page.
+    -->
     <p>Use the controls below to set the frequency and create custom trigonometric wave functions.</p>
+    <!--
+      Controls Div: This div contains the controls for the sound synthesis.
+    -->
     <div class="controls">
+      <!--
+        Frequency Input: This is a range input that allows the user to set the frequency of the sound.
+      -->
       <label>Frequency (Hz): <input type="range" id="frequency" min="20" max="9000" step="10" value="440"></label>
+      <!--
+        Frequency Value Span: This span displays the current frequency value.
+      -->
       <span id="freqValue" style="display:inline-block;"></span>
+      <!--
+        Script: This script updates the frequency value span in real-time as the user adjusts the frequency input.
+      -->
       <script>
+      // Get the frequency input and value span elements
       const frequencyInput = document.getElementById('frequency');
       const freqValueSpan = document.getElementById('freqValue');
+      
+      // Add an event listener to the frequency input to update the value span
       frequencyInput.addEventListener('input', () => {
+        // Update the value span with the current frequency value
         freqValueSpan.textContent = `${frequencyInput.value} Hz`;
       });
       </script>
+      <!--
+        Customize Wave Function Heading: This is a heading that introduces the wave function customization controls.
+      -->
       <h3>Customize Wave Function</h3>
+      <!--
+        Amplitude Inputs: These are range inputs that allow the user to set the amplitude of the sine, cosine, and tangent waves.
+      -->
       <label>Amplitude of Sine: <input type="range" id="ampSine" min="0" max="1" step="0.1" value="1"></label>
       <label>Amplitude of Cosine: <input type="range" id="ampCosine" min="0" max="1" step="0.1" value="0"></label>
       <label>Amplitude of Tangent: <input type="range" id="ampTangent" min="0" max="1" step="0.1" value="0"></label>
+      <!--
+        Play and Stop Buttons: These buttons allow the user to play and stop the sound.
+      -->
       <button id="playBtn">Play Sound</button>
       <button id="stopBtn">Stop Sound</button>
+      <!--
+        Oscillation Settings Button: This button links to the oscillation settings page.
+      -->
       <button onclick="location.href='oscillation.html'" style="margin-top: 20px;">
         Go to Oscillation Settings
       </button>
     </div>
   </main>
+  <!--
+    Script Tags: These tags link to external JavaScript files that provide additional functionality to the page.
+  -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/addons/p5.sound.min.js"></script>
   <script src="synth.js"></script>

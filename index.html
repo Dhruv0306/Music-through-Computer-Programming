@@ -1,92 +1,261 @@
 <!DOCTYPE html>
+<!--
+  Document Type Declaration: This document is written in HTML5.
+-->
 <html lang="en">
+<!--
+  Root element of the HTML document, specifying the language as English.
+-->
 <head>
+  <!--
+    Meta tags providing metadata about the document.
+  -->
   <meta charset="UTF-8">
+  <!--
+    Character encoding for the document, set to UTF-8 for internationalization.
+  -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--
+    Viewport settings for responsive design, setting the initial scale to 1.0.
+  -->
   <title>Interactive Music Programming Interface</title>
+  <!--
+    Title of the page, displayed in the browser's title bar and search engine results.
+  -->
   <link rel="stylesheet" href="styles.css">
+  <!--
+    Link to an external stylesheet, providing visual styling for the document.
+  -->
 </head>
 <body>
-  <!-- Container for animation -->
+  <!--
+    Container element for the animation, with an ID for targeting with CSS or JavaScript.
+  -->
   <div id="animation-container"></div>
   <main>
-    <!-- Project title and introduction -->
+    <!--
+      Main content section of the page, containing the project title and introduction.
+    -->
     <h1>Interactive Music Programming Interface</h1>
+    <!--
+      Heading element displaying the project title.
+    -->
     <p>An interactive web application that brings together music and programming, allowing you to experiment with sound synthesis, audio manipulation, and visual representations of sound waves.</p>
+    <!--
+      Paragraph element providing a brief introduction to the project.
+    -->
     
-    <!-- Features section -->
+    <!--
+      Features section, highlighting the key features of the project.
+    -->
     <section>
       <h2>Features</h2>
+      <!--
+        Heading element displaying the section title.
+      -->
       <ul>
+        <!--
+          Unordered list element containing the feature items.
+        -->
         <li><strong>Sound Synthesizer</strong>
+          <!--
+            List item element with a strong emphasis on the feature title.
+          -->
           <ul>
+            <!--
+              Nested unordered list element containing the feature details.
+            -->
             <li>Real-time frequency control (20Hz - 9000Hz)</li>
+            <!--
+              List item element describing the frequency control feature.
+            -->
             <li>Multiple waveform options</li>
+            <!--
+              List item element describing the waveform options feature.
+            -->
             <li>Customizable wave mixing</li>
+            <!--
+              List item element describing the wave mixing feature.
+            -->
             <li>Interactive amplitude control</li>
+            <!--
+              List item element describing the amplitude control feature.
+            -->
           </ul>
         </li>
         <li><strong>Audio Effect Processor</strong>
+          <!--
+            List item element with a strong emphasis on the feature title.
+          -->
           <ul>
+            <!--
+              Nested unordered list element containing the feature details.
+            -->
             <li>Audio file processing</li>
+            <!--
+              List item element describing the audio file processing feature.
+            -->
             <li>Trigonometric modulation effects</li>
+            <!--
+              List item element describing the trigonometric modulation effects feature.
+            -->
             <li>Real-time parameter adjustment</li>
+            <!--
+              List item element describing the real-time parameter adjustment feature.
+            -->
             <li>Dynamic audio manipulation</li>
+            <!--
+              List item element describing the dynamic audio manipulation feature.
+            -->
           </ul>
         </li>
         <li><strong>Visual Wave Display</strong>
+          <!--
+            List item element with a strong emphasis on the feature title.
+          -->
           <ul>
+            <!--
+              Nested unordered list element containing the feature details.
+            -->
             <li>Real-time waveform visualization</li>
+            <!--
+              List item element describing the real-time waveform visualization feature.
+            -->
             <li>Interactive animations</li>
+            <!--
+              List item element describing the interactive animations feature.
+            -->
             <li>Dynamic color schemes</li>
+            <!--
+              List item element describing the dynamic color schemes feature.
+            -->
           </ul>
         </li>
       </ul>
     </section>
 
-    <!-- Tools section -->
+    <!--
+      Tools section, showcasing the available tools for the project.
+    -->
     <section>
       <h2>Available Tools</h2>
+      <!--
+        Heading element displaying the section title.
+      -->
       <div class="tools-grid">
+        <!--
+          Container element for the tools grid, with a class for styling.
+        -->
         <div class="tool-card">
+          <!--
+            Container element for a single tool card, with a class for styling.
+          -->
           <h3>Sound Synthesis</h3>
+          <!--
+            Heading element displaying the tool title.
+          -->
           <p>Create and manipulate digital sounds using various waveforms and frequencies.</p>
+          <!--
+            Paragraph element providing a brief description of the tool.
+          -->
           <a href="synth.html" class="btn">Open Synthesizer</a>
+          <!--
+            Anchor element linking to the synthesizer tool, with a class for styling.
+          -->
         </div>
         <div class="tool-card">
+          <!--
+            Container element for a single tool card, with a class for styling.
+          -->
           <h3>Audio Effects</h3>
+          <!--
+            Heading element displaying the tool title.
+          -->
           <p>Process and modify audio files with different mathematical functions.</p>
+          <!--
+            Paragraph element providing a brief description of the tool.
+          -->
           <a href="oscillation.html" class="btn">Open Effects Processor</a>
+          <!--
+            Anchor element linking to the effects processor tool, with a class for styling.
+          -->
         </div>
       </div>
     </section>
 
-    <!-- Getting Started section -->
+    <!--
+      Getting Started section, providing instructions for new users.
+    -->
     <section>
       <h2>Getting Started</h2>
+      <!--
+        Heading element displaying the section title.
+      -->
       <p>Begin by exploring the synthesizer to create basic sounds, then move on to the audio effects processor for more complex manipulations. All tools feature real-time visual feedback to help you understand the relationship between mathematics and sound.</p>
+      <!--
+        Paragraph element providing a brief introduction to getting started with the project.
+      -->
     </section>
 
-    <!-- Technical Requirements -->
+    <!--
+      Technical Requirements section, outlining the necessary technical specifications.
+    -->
     <section>
       <h2>Technical Requirements</h2>
+      <!--
+        Heading element displaying the section title.
+      -->
       <ul>
+        <!--
+          Unordered list element containing the technical requirements.
+        -->
         <li>Modern web browser with Web Audio API support</li>
+        <!--
+          List item element describing the browser requirement.
+        -->
         <li>JavaScript enabled</li>
+        <!--
+          List item element describing the JavaScript requirement.
+        -->
         <li>Speakers or headphones</li>
+        <!--
+          List item element describing the audio output requirement.
+        -->
         <li>Stable internet connection</li>
+        <!--
+          List item element describing the internet connection requirement.
+        -->
       </ul>
     </section>
 
-    <!-- Quick start buttons -->
+    <!--
+      Quick start buttons, providing easy access to the synthesizer and effects processor tools.
+    -->
     <div class="quick-start">
+      <!--
+        Container element for the quick start buttons, with a class for styling.
+      -->
       <a href="synth.html" class="btn primary">Start with Synthesis</a>
+      <!--
+        Anchor element linking to the synthesizer tool, with a class for styling.
+      -->
       <a href="oscillation.html" class="btn secondary">Try Audio Effects</a>
+      <!--
+        Anchor element linking to the effects processor tool, with a class for styling.
+      -->
     </div>
   </main>
 
-  <!-- Script tags for p5.js library and custom sketch.js file -->
+  <!--
+    Script tags for loading external JavaScript files.
+  -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <!--
+    Script tag loading the p5.js library from a CDN.
+  -->
   <script src="sketch.js"></script>
+  <!--
+    Script tag loading the custom sketch.js file.
+  -->
 </body>
 </html>

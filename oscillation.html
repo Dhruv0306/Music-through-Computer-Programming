@@ -1,42 +1,103 @@
 <!DOCTYPE html>
+<!--
+  Document Type Declaration: This document is written in HTML5.
+-->
 <html lang="en">
+<!--
+  Root element of the HTML document, specifying the language as English.
+-->
 <head>
+  <!--
+    Meta tags providing metadata about the document.
+  -->
   <meta charset="UTF-8">
+  <!--
+    Character encoding for the document, set to UTF-8 for internationalization.
+  -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--
+    Viewport settings for responsive design, setting the initial scale to 1.0.
+  -->
   <title>Audio Oscillation Effect</title>
+  <!--
+    Title of the HTML document, displayed in the browser's title bar.
+  -->
   <link rel="stylesheet" href="styles.css">
+  <!--
+    Link to an external stylesheet for styling the document.
+  -->
 </head>
 <body>
+  <!--
+    Main content of the HTML document.
+  -->
   <main>
+    <!--
+      Heading element displaying the title of the page.
+    -->
     <h1>Apply Trigonometric Oscillation to Audio</h1>
+    <!--
+      Container element for the audio controls.
+    -->
     <div class="controls">
+      <!--
+        Label and input element for uploading an audio file.
+      -->
       <label for="audioFile">Upload an audio file:</label>
       <input type="file" id="audioFile" accept="audio/*">
       
+      <!--
+        Label and range input element for setting the frequency.
+      -->
       <label for="frequency">Frequency (Hz): <input type="range" id="frequency" min="20" max="9000" step="20" value="440"></label>
+      <!--
+        Span element displaying the current frequency value.
+      -->
       <span id="freqValue" style="display:inline-block;"></span>
       <script>
+      // Get references to the frequency input and value span elements.
       const frequencyInput = document.getElementById('frequency');
       const freqValueSpan = document.getElementById('freqValue');
+      
+      // Add an event listener to update the frequency value display on input.
       frequencyInput.addEventListener('input', () => {
+        // Update the frequency value display with the current input value.
         freqValueSpan.textContent = `${frequencyInput.value} Hz`;
       });
       </script>
+      <!--
+        Label and select element for choosing a trigonometric function.
+      -->
       <label for="functionSelect">Trigonometric Function:</label>
       <select id="functionSelect">
+        <!--
+          Options for the trigonometric functions.
+        -->
         <option value="sin">Sine</option>
         <option value="cos">Cosine</option>
         <option value="tan">Tangent</option>
         <option value="combo">Custom Combination</option>
       </select>
 
+      <!--
+        Buttons for playing and stopping the oscillation.
+      -->
       <button id="playOscillation">Play Oscillation</button>
       <button id="stopOscillation">Stop Oscillation</button>
+      <!--
+        Button for navigating back to the synthesizer page.
+      -->
       <button onclick="location.href='synth.html'" class="nav-button">Back to Synthesizer</button>
     </div>
   </main>
+  <!--
+    Script tags for loading external JavaScript libraries.
+  -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/addons/p5.sound.min.js"></script>
+  <!--
+    Script tag for loading the custom oscillation script.
+  -->
   <script src="oscillation.js"></script>
 </body>
 </html>
