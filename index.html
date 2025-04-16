@@ -22,12 +22,28 @@
   <!--
     Title of the page, displayed in the browser's title bar and search engine results.
   -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="styles.css">
   <!--
     Link to an external stylesheet, providing visual styling for the document.
   -->
 </head>
 <body>
+  <!-- Navigation Bar -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html">Music Programming</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="synth.html">Synthesizer</a></li>
+        <li><a href="oscillation.html">Audio Effects</a></li>
+        <li><a href="e-sitar.html">E-Sitar</a></li>
+      </ul>
+    </div>
+  </nav>
+
   <!--
     Container element for the animation, with an ID for targeting with CSS or JavaScript.
   -->
@@ -158,10 +174,6 @@
           <!--
             Paragraph element providing a brief description of the tool.
           -->
-          <a href="synth.html" class="btn">Open Synthesizer</a>
-          <!--
-            Anchor element linking to the synthesizer tool, with a class for styling.
-          -->
         </div>
         <div class="tool-card">
           <!--
@@ -174,10 +186,6 @@
           <p>Process and modify audio files with different mathematical functions.</p>
           <!--
             Paragraph element providing a brief description of the tool.
-          -->
-          <a href="oscillation.html" class="btn">Open Effects Processor</a>
-          <!--
-            Anchor element linking to the effects processor tool, with a class for styling.
           -->
         </div>
       </div>
@@ -227,23 +235,6 @@
         -->
       </ul>
     </section>
-
-    <!--
-      Quick start buttons, providing easy access to the synthesizer and effects processor tools.
-    -->
-    <div class="quick-start">
-      <!--
-        Container element for the quick start buttons, with a class for styling.
-      -->
-      <a href="synth.html" class="btn primary">Start with Synthesis</a>
-      <!--
-        Anchor element linking to the synthesizer tool, with a class for styling.
-      -->
-      <a href="oscillation.html" class="btn secondary">Try Audio Effects</a>
-      <!--
-        Anchor element linking to the effects processor tool, with a class for styling.
-      -->
-    </div>
   </main>
 
   <!--

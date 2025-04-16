@@ -1,0 +1,454 @@
+/* Main styling for the e-sitar application */
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1a1a1a, #4a4a4a);
+    color: #fff;
+    min-height: 100vh;
+    padding-top: 90px; /* Added to account for fixed navigation */
+}
+
+/* Navigation Bar Styles */
+.main-nav {
+    background: rgba(26, 26, 26, 0.95);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.nav-logo a {
+    color: #ffd700;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-logo a:hover {
+    color: #ffeb3b;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+    background: rgba(255, 215, 0, 0.1);
+    color: #ffd700;
+}
+
+.nav-links li a.active {
+    background: #ffd700;
+    color: #1a1a1a;
+}
+
+/* Main content wrapper */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #ffd700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 40px;
+}
+
+/* Sitar container and string styling */
+.sitar-container {
+    background: #2a2a2a;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.string-container {
+    position: relative;
+    padding: 40px 0;
+    margin: 20px 0;
+}
+
+.note-markers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.note-marker {
+    color: #ffd700;
+    font-size: 0.9em;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.note-marker::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 6px;
+    background: #ffd700;
+}
+
+.note-marker:hover {
+    color: #ffeb3b;
+    transform: translateY(-2px);
+}
+
+.main-string {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    background: #333;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.string-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #ffd700;
+    transform: translateY(-50%);
+}
+
+.note-label {
+    position: absolute;
+    top: -25px;
+    transform: translateX(-50%);
+    color: #ffd700;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Position note labels based on their frequencies */
+.note-sa { left: 0%; }         /* 240 Hz */
+.note-re { left: 12.5%; }      /* 270 Hz */
+.note-ga { left: 20%; }        /* 288 Hz */
+.note-ma { left: 33.33%; }     /* 320 Hz */
+.note-pa { left: 50%; }        /* 360 Hz */
+.note-dha { left: 68.75%; }    /* 405 Hz */
+.note-ni { left: 80%; }        /* 432 Hz */
+.note-sa-high { left: 100%; }  /* 480 Hz */
+
+.string-bead {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff4444;
+    border-radius: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.string-bead.on-note {
+    width: 16px;
+    height: 16px;
+    background: #ffd700;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+}
+
+.string-bead.on-note::after {
+    content: attr(data-note);
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffd700;
+    color: #1a1a1a;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.main-string:hover .string-bead {
+    display: block;
+}
+
+.main-string.active .string-bead {
+    display: block;
+}
+
+/* Fret markers styling */
+.frets {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.fret {
+    width: 40px;
+    height: 40px;
+    background: #3a3a3a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 2px solid #ffd700;
+    color: #ffd700;
+}
+
+.fret:hover {
+    background: #ffd700;
+    color: #1a1a1a;
+    transform: scale(1.1);
+}
+
+.fret.active {
+    background: #ffd700;
+    color: #1a1a1a;
+    animation: pulse 0.5s;
+}
+
+/* Controls section styling */
+.controls {
+    background: rgba(26, 26, 26, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    padding: 10px 0;
+    position: relative;
+}
+
+.slider-container label {
+    color: #ffd700;
+    min-width: 150px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+input[type="range"] {
+    flex: 1;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #3a3a3a;
+    border-radius: 4px;
+    outline: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    height: 8px;
+    background: #3a3a3a;
+    border-radius: 4px;
+    border: 1px solid #4a4a4a;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    background: #ffd700;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -8px; /* Centers the thumb on the track */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+/* For Firefox */
+input[type="range"]::-moz-range-track {
+    height: 8px;
+    background: #3a3a3a;
+    border-radius: 4px;
+    border: 1px solid #4a4a4a;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    background: #ffd700;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* For IE */
+input[type="range"]::-ms-track {
+    height: 8px;
+    background: transparent;
+    border-radius: 4px;
+    border-color: transparent;
+    color: transparent;
+}
+
+input[type="range"]::-ms-fill-lower {
+    background: #3a3a3a;
+    border: 1px solid #4a4a4a;
+    border-radius: 4px;
+}
+
+input[type="range"]::-ms-fill-upper {
+    background: #3a3a3a;
+    border: 1px solid #4a4a4a;
+    border-radius: 4px;
+}
+
+input[type="range"]::-ms-thumb {
+    width: 24px;
+    height: 24px;
+    background: #ffd700;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Duration value styling */
+#durationValue {
+    color: #ffd700;
+    margin-left: 10px;
+    min-width: 40px;
+    text-align: right;
+}
+
+button#droneToggle {
+    padding: 15px 30px;
+    background: #ffd700;
+    border: none;
+    border-radius: 5px;
+    color: #1a1a1a;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.2s;
+    width: 200px;
+    align-self: center;
+    margin-bottom: 10px;
+}
+
+button#droneToggle:hover {
+    background: #ffeb3b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Container styling */
+.container {
+    max-width: 100%;
+    padding: 20px;
+    margin-bottom: 30px;
+    background: rgba(26, 26, 26, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Animation keyframes */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.control-group span {
+    color: #ffd700;
+    font-size: 0.9em;
+    min-width: 45px;
+    text-align: right;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 10px;
+    }
+
+    .frets {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .control-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    label {
+        min-width: auto;
+        margin-bottom: 5px;
+    }
+} 

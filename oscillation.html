@@ -22,12 +22,28 @@
   <!--
     Title of the HTML document, displayed in the browser's title bar.
   -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="styles.css">
   <!--
     Link to an external stylesheet for styling the document.
   -->
 </head>
 <body>
+  <!-- Navigation Bar -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html">Music Programming</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="synth.html">Synthesizer</a></li>
+        <li><a href="oscillation.html" class="active">Audio Effects</a></li>
+        <li><a href="e-sitar.html">E-Sitar</a></li>
+      </ul>
+    </div>
+  </nav>
+
   <!--
     Main content of the HTML document.
   -->
@@ -40,54 +56,31 @@
       Container element for the audio controls.
     -->
     <div class="controls">
-      <!--
-        Label and input element for uploading an audio file.
-      -->
-      <label for="audioFile">Upload an audio file:</label>
-      <input type="file" id="audioFile" accept="audio/*">
+      <div class="file-input-container">
+        <label for="audioFile">Upload an audio file:</label>
+        <input type="file" id="audioFile" accept="audio/*">
+      </div>
       
-      <!--
-        Label and range input element for setting the frequency.
-      -->
-      <label for="frequency">Frequency (Hz): <input type="range" id="frequency" min="20" max="9000" step="20" value="440"></label>
-      <!--
-        Span element displaying the current frequency value.
-      -->
-      <span id="freqValue" style="display:inline-block;"></span>
-      <script>
-      // Get references to the frequency input and value span elements.
-      const frequencyInput = document.getElementById('frequency');
-      const freqValueSpan = document.getElementById('freqValue');
-      
-      // Add an event listener to update the frequency value display on input.
-      frequencyInput.addEventListener('input', () => {
-        // Update the frequency value display with the current input value.
-        freqValueSpan.textContent = `${frequencyInput.value} Hz`;
-      });
-      </script>
-      <!--
-        Label and select element for choosing a trigonometric function.
-      -->
-      <label for="functionSelect">Trigonometric Function:</label>
-      <select id="functionSelect">
-        <!--
-          Options for the trigonometric functions.
-        -->
-        <option value="sin">Sine</option>
-        <option value="cos">Cosine</option>
-        <option value="tan">Tangent</option>
-        <option value="combo">Custom Combination</option>
-      </select>
+      <div class="slider-container">
+        <label for="frequency">Frequency (Hz):</label>
+        <input type="range" id="frequency" min="20" max="9000" step="20" value="440">
+        <span id="freqValue">440 Hz</span>
+      </div>
 
-      <!--
-        Buttons for playing and stopping the oscillation.
-      -->
-      <button id="playOscillation">Play Oscillation</button>
-      <button id="stopOscillation">Stop Oscillation</button>
-      <!--
-        Button for navigating back to the synthesizer page.
-      -->
-      <button onclick="location.href='synth.html'" class="nav-button">Back to Synthesizer</button>
+      <div class="select-container">
+        <label for="functionSelect">Trigonometric Function:</label>
+        <select id="functionSelect">
+          <option value="sin">Sine</option>
+          <option value="cos">Cosine</option>
+          <option value="tan">Tangent</option>
+          <option value="combo">Custom Combination</option>
+        </select>
+      </div>
+
+      <div class="button-container">
+        <button id="playOscillation">Play Oscillation</button>
+        <button id="stopOscillation">Stop Oscillation</button>
+      </div>
     </div>
   </main>
   <!--
@@ -99,5 +92,14 @@
     Script tag for loading the custom oscillation script.
   -->
   <script src="oscillation.js"></script>
+  <script>
+    // Update frequency value display
+    const frequencyInput = document.getElementById('frequency');
+    const freqValueSpan = document.getElementById('freqValue');
+    
+    frequencyInput.addEventListener('input', () => {
+      freqValueSpan.textContent = `${frequencyInput.value} Hz`;
+    });
+  </script>
 </body>
 </html>
