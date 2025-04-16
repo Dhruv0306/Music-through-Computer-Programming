@@ -40,7 +40,7 @@ An interactive web application that combines music and programming, allowing use
   - p5.sound.js
 
 ## Live Demo
-[[Live demo link...](https://dhruv0306.github.io/Noise-Music-through-Computing/)]
+[[Live demo link...](https://dhruv0306.github.io/Music-through-Computer-Programming/)]
 
 ## Getting Started
 
